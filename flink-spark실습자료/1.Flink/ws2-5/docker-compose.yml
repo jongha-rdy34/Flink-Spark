@@ -1,0 +1,31 @@
+# 단일 브로커 Kafka (KRaft 모드, ZooKeeper 불필요)
+# 토픽 자동 생성을 꺼 두었으므로 토픽을 먼저 만들어야 합니다.
+#
+# 네이티브 Kafka를 먼저 꺼야 합니다. 켜 둔 채 up 해도 오류 없이 뜨지만, localhost:9092는 네이티브,
+# docker compose exec는 컨테이너를 보게 됩니다. 나중에 네이티브를 꺼도 localhost:9092가 컨테이너로
+# 연결되지 않으므로, 그때는 docker compose down 후 다시 up 해야 합니다.
+#   pkill -f 'kafka\.Kafka'; sleep 3; pkill -f QuorumPeerMain
+#   docker compose up -d
+#   docker compose exec kafka kafka-topics --bootstrap-server localhost:9092 --list
+services:
+  kafka:
+    image: confluentinc/cp-kafka:7.6.1
+    container_name: ssafy-kafka
+    hostname: kafka
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092,CONTROLLER://kafka:9093
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,CONTROLLER:PLAINTEXT
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@kafka:9093
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "false"
+      KAFKA_LOG_DIRS: /var/lib/kafka/data
+      CLUSTER_ID: MkU3OEVBNTcwNTJENDM2Qk
