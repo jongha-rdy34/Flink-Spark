@@ -2,7 +2,8 @@
 flink-spark의 실습자료와 예상문제
 
 ## 시작 전에 수업 자료 de 내부에 있는 것들로 flink, spark를 다운 받아야 함  
-모르겠으면 AI에게..
+모르겠으면 AI에게..  
+예상문제 내부에 공지에서 확인된 버전들로 **requirements.txt**를 만들어놨음. 없으면 그걸로 python pip install -r requirements.txt  
 
 ## Spark를 할 때
 - 파일 구조가  
