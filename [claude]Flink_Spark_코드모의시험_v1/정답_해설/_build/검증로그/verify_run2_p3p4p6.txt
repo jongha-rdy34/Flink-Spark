@@ -1,0 +1,21 @@
+WORK = C:\Users\82109\AppData\Local\Temp\fsv_gigatjwm
+PASS Q3(ans) Enter 전 Job 0개, 후 2개(collect·count)
+PASS Q3(ans) RESULT [6, 12, 18, 24, 30], COUNT 5
+     0 -> 2 ['collect at /w/ans/problem3/lazy_check.py:18', 'count at /w/ans/problem3/lazy_check.py:19']
+PASS Q3(exam) Enter 전 Job 0개, 후 2개(collect·count)
+PASS Q3(exam) RESULT [6, 12, 18, 24, 30], COUNT 5
+     0 -> 2 ['collect at /w/exam/problem3/lazy_check.py:18', 'count at /w/exam/problem3/lazy_check.py:19']
+PASS Q4 정답 실행
+PASS Q4 DONE만·매출 내림차순·동률 카테고리 오름차순
+PASS Q4 ROWS=4
+     ['book,2,84000', 'beauty,1,43000', 'toy,3,43000', 'food,2,30000']
+PASS Q4 응시용은 NotImplementedError
+PASS Q6 정답 실행
+PASS Q6 수단별 집계
+PASS Q6 COUNT=5 TOTAL=47000
+PASS Q6 amount가 integer로 변환
+     ['card,2,19000', 'point,1,9000', 'transfer,2,19000']
+PASS Q6 버그 조건(contains)은 COUNT=8로 틀림
+PASS Q6 응시용은 NotImplementedError
+
+==== 14/14 PASS ====

@@ -1,0 +1,2 @@
+pyspark==3.5.4
+apache-flink==2.2.1

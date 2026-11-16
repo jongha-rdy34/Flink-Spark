@@ -1,0 +1,44 @@
+WORK = C:\Users\82109\AppData\Local\Temp\fsv_efgrwdek
+PASS Q1 정답 실행
+PASS Q1 누적 결과 5줄(수량 0 제외)
+     ["('gangnam', 6000)", "('hongdae', 4500)", "('jamsil', 15000)", "('hongdae', 10500)", "('gangnam', 10000)"]
+PASS Q1 응시용은 빈칸 때문에 실패
+PASS Q2 정답 실행
+PASS Q2 상위 5개 + UNIQUE=14
+     ['delivery=3', 'fast=3', 'great=3', 'price=3', 'packaging=2', 'UNIQUE=14']
+PASS Q2 응시용은 빈칸 때문에 실패
+PASS Q3(ans) Enter 전 Job 0개, 후 2개(collect·count)
+FAIL Q3(ans) RESULT [6, 12, 18, 24, 30], COUNT 5  :: ['STEP1 transformation defined', 'Spark UI: http://d882dd82a9da:4040', '[1] Spark UI의 Jobs 화면을 캡처한 뒤 Enter: RESULT [6, 12, 18, 24, 30]', 'COUNT 5']
+     0 -> 2 ['collect at /w/ans/problem3/lazy_check.py:18', 'count at /w/ans/problem3/lazy_check.py:19']
+PASS Q3(exam) Enter 전 Job 0개, 후 2개(collect·count)
+FAIL Q3(exam) RESULT [6, 12, 18, 24, 30], COUNT 5  :: ['STEP1 transformation defined', 'Spark UI: http://6208c057c124:4040', '[1] Spark UI의 Jobs 화면을 캡처한 뒤 Enter: RESULT [6, 12, 18, 24, 30]', 'COUNT 5']
+     0 -> 2 ['collect at /w/exam/problem3/lazy_check.py:18', 'count at /w/exam/problem3/lazy_check.py:19']
+PASS Q4 정답 실행
+FAIL Q4 DONE만·매출 내림차순·동률 카테고리 오름차순  :: ['-- order_id: string (nullable = true)', '-- price: integer (nullable = true)', '-- qty: integer (nullable = true)', '-- status: string (nullable = true)', 'book,2,84000', 'beauty,1,43000', 'toy,3,43000', 'food,2,30000']
+PASS Q4 ROWS=4
+     ['-- order_id: string (nullable = true)', '-- price: integer (nullable = true)', '-- qty: integer (nullable = true)', '-- status: string (nullable = true)', 'book,2,84000', 'beauty,1,43000', 'toy,3,43000', 'food,2,30000']
+PASS Q4 응시용은 NotImplementedError
+PASS Q5 정답 실행
+PASS Q5 윈도우 경계(4999|5000, 9999|10000) 결과 6개
+PASS Q5 COUNT=6
+    출력 순서: ['WINDOW s1 sum=44 last_ts=4999', 'WINDOW s2 sum=30 last_ts=2000', 'WINDOW s2 sum=31 last_ts=9999', 'WINDOW s1 sum=25 last_ts=5000', 'WINDOW s1 sum=22 last_ts=12000', 'WINDOW s2 sum=29 last_ts=10000']
+PASS Q5 응시용은 NotImplementedError
+PASS Q6 정답 실행
+FAIL Q6 수단별 집계  :: ['-- pay_id: string (nullable = true)', '-- user: string (nullable = true)', '-- amount: integer (nullable = true)', '-- status: string (nullable = true)', 'card,2,19000', 'point,1,9000', 'transfer,2,19000']
+PASS Q6 COUNT=5 TOTAL=47000
+PASS Q6 amount가 integer로 변환
+     ['-- pay_id: string (nullable = true)', '-- user: string (nullable = true)', '-- amount: integer (nullable = true)', '-- status: string (nullable = true)', 'card,2,19000', 'point,1,9000', 'transfer,2,19000']
+PASS Q6 버그 조건(contains)은 COUNT=8로 틀림
+PASS Q6 응시용은 NotImplementedError
+PASS Q7 정답 실행
+PASS Q7 키별 잔액(부족 시 유지, 같으면 사용)
+PASS Q7 COUNT=7
+     ['BALANCE u1 EARN -> 500', 'BALANCE u2 EARN -> 300', 'BALANCE u1 USE -> 300', 'BALANCE u2 USE -> 300', 'BALANCE u1 USE -> 0', 'BALANCE u2 EARN -> 400', 'BALANCE u2 USE -> 0']
+PASS Q7 다른 입력(잔액 0에서 사용 → 유지)
+PASS Q7 응시용은 NotImplementedError
+
+==== 25/29 PASS ====
+FAIL Q3(ans) RESULT [6, 12, 18, 24, 30], COUNT 5 ['STEP1 transformation defined', 'Spark UI: http://d882dd82a9da:4040', '[1] Spark UI의 Jobs 화면을 캡처한 뒤 Enter: RESULT [6, 12, 18, 24, 30]', 'COUNT 5']
+FAIL Q3(exam) RESULT [6, 12, 18, 24, 30], COUNT 5 ['STEP1 transformation defined', 'Spark UI: http://6208c057c124:4040', '[1] Spark UI의 Jobs 화면을 캡처한 뒤 Enter: RESULT [6, 12, 18, 24, 30]', 'COUNT 5']
+FAIL Q4 DONE만·매출 내림차순·동률 카테고리 오름차순 ['-- order_id: string (nullable = true)', '-- price: integer (nullable = true)', '-- qty: integer (nullable = true)', '-- status: string (nullable = true)', 'book,2,84000', 'beauty,1,43000', 'toy,3,43000', 'food,2,30000']
+FAIL Q6 수단별 집계 ['-- pay_id: string (nullable = true)', '-- user: string (nullable = true)', '-- amount: integer (nullable = true)', '-- status: string (nullable = true)', 'card,2,19000', 'point,1,9000', 'transfer,2,19000']

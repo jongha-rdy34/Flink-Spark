@@ -1,0 +1,11 @@
+order_id,category,price,qty,status
+O001,book,12000,2,DONE
+O002,food,8000,3,DONE
+O003,book,15000,1,CANCEL
+O004,toy,20000,1,DONE
+O005,food,6000,1,DONE
+O006,toy,9000,2,DONE
+O007,book,30000,2,DONE
+O008,food,40000,1,CANCEL
+O009,beauty,43000,1,DONE
+O010,toy,5000,1,DONE
