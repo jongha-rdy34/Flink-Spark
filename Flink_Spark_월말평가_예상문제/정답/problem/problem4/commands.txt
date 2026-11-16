@@ -1,0 +1,5 @@
+# A
+python -m problem4.run_check --input data/inspection.txt --minimum 10
+
+# B
+python -m problem4.run_check --input data/inspection.txt --minimum 26

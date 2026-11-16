@@ -1,0 +1,5 @@
+RED blue red
+BLUE yellow
+   
+green red GREEN
+blueish BLUE
